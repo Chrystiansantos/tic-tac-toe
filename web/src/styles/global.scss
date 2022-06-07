@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bgFrame: #192B32;
+  --bgBox: #1F3541;
+  --bgButtonYou: #35C2BE;
+  --bgButtonAdver: #F2B237;
+  --bgButtonTies: #A8BFC9;
+  --text-color: #A8BEC9;
+}
+
+@media (max-width:1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width:720px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+html {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  background: var(--bgFrame);
+  color: var(--text-color);
+  height: 100%;
+}
+
+body,
+input,
+textarea,
+select,
+button {
+  font: 400 1rem 'Roboto', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.react-modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-modal-content {
+  width: 100%;
+  background-color: var(--bgBox);
+  padding: 3rem;
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,50 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+
+  .buttonTurn {
+    margin: auto;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0.5rem 1.5rem;
+      background-color: var(--bgBox);
+      border: none;
+      border-radius: 0.25rem;
+      color: var(--bgButtonTies);
+      font-weight: 600;
+      box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+      svg {
+        padding-right: 0.25rem;
+      }
+
+      span {
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        width: 10rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  .buttonRefresh {
+    margin-left: auto;
+
+    button {
+      padding: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--bgButtonTies);
+      border: none;
+      border-radius: 0.25rem;
+    }
+  }
+}
