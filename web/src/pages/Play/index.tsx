@@ -99,7 +99,6 @@ export function Play() {
 
   const restartGame = async () => {
     await api.delete(`/room/delete/${room}`);
-    setData('', 'x');
     navigate('/');
   };
 
@@ -109,13 +108,13 @@ export function Play() {
     if (!isReestart) restartGame();
   };
 
-  const handleSelectBoard = (position: number, icon: IBoard) => {
+  const handleSelectBoard = async (position: number) => {
     const boardChanged = board.map((el, i) =>
       i === position ? selectIcon : el,
     );
     setBoard(boardChanged);
     setDisabledButton(true);
-    api.post('/board/moviment-board', {
+    await api.post('/board/moviment-board', {
       boardChanged,
       room,
       player: selectIcon,

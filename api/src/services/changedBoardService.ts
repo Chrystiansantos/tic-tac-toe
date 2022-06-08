@@ -13,12 +13,9 @@ export class ChangedBoardService {
   constructor() { }
 
   public async execute({ room, board, player, changedNextPlayer }: IChangedBoardServiceDTO) {
-    let nextPlay = '';
-    if (changedNextPlayer) {
-      nextPlay = parseInt(String((Math.random() * 10) % 2)) == 0 ? 'x' : 'o';
-    } else {
-      nextPlay = player === 'x' ? 'o' : 'x';
-    }
+
+    const nextPlay = changedNextPlayer ?
+      parseInt(String((Math.random() * 10) % 2)) == 0 ? 'x' : 'o' : player === 'x' ? 'o' : 'x';
 
     /* 
       0 1 2
@@ -34,17 +31,27 @@ export class ChangedBoardService {
       2 5 8 = vencedor
       6 7 8 = vencedor
     */
+
     let winner = null;
 
-    if (![board[0], board[1], board[2]].includes('') && board[0] === board[1] && board[1] === board[2]) winner = board[0];
-    if (![board[0], board[4], board[8]].includes('') && board[0] === board[4] && board[4] === board[8]) winner = board[0];
-    if (![board[0], board[3], board[6]].includes('') && board[0] === board[3] && board[3] === board[6]) winner = board[0];
-    if (![board[3], board[4], board[5]].includes('') && board[3] === board[4] && board[4] === board[5]) winner = board[3];
-    if (![board[1], board[4], board[7]].includes('') && board[1] === board[4] && board[4] === board[7]) winner = board[1];
-    if (![board[2], board[4], board[6]].includes('') && board[2] === board[4] && board[4] === board[6]) winner = board[2];
-    if (![board[2], board[5], board[8]].includes('') && board[2] === board[5] && board[5] === board[8]) winner = board[2];
-    if (![board[2], board[5], board[8]].includes('') && board[2] === board[5] && board[5] === board[8]) winner = board[2];
-    if (![board[6], board[7], board[8]].includes('') && board[6] === board[7] && board[7] === board[8]) winner = board[6];
+    if (![board[0], board[1], board[2]].includes('')
+      && board[0] === board[1] && board[1] === board[2]) winner = board[0];
+    if (![board[0], board[4], board[8]].includes('')
+      && board[0] === board[4] && board[4] === board[8]) winner = board[0];
+    if (![board[0], board[3], board[6]].includes('')
+      && board[0] === board[3] && board[3] === board[6]) winner = board[0];
+    if (![board[3], board[4], board[5]].includes('')
+      && board[3] === board[4] && board[4] === board[5]) winner = board[3];
+    if (![board[1], board[4], board[7]].includes('')
+      && board[1] === board[4] && board[4] === board[7]) winner = board[1];
+    if (![board[2], board[4], board[6]].includes('')
+      && board[2] === board[4] && board[4] === board[6]) winner = board[2];
+    if (![board[2], board[5], board[8]].includes('')
+      && board[2] === board[5] && board[5] === board[8]) winner = board[2];
+    if (![board[2], board[5], board[8]].includes('')
+      && board[2] === board[5] && board[5] === board[8]) winner = board[2];
+    if (![board[6], board[7], board[8]].includes('')
+      && board[6] === board[7] && board[7] === board[8]) winner = board[6];
 
     if (winner) {
       if (winner === 'x') {

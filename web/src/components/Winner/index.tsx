@@ -10,7 +10,7 @@ interface IWinnerProps {
 export function Winner({ closeModal, nextRound, messageFinish }: IWinnerProps) {
   return (
     <div className={styles.container}>
-      <h1>You won!</h1>
+      <h1>{messageFinish}</h1>
       <span>
         <FiX />
         {messageFinish}

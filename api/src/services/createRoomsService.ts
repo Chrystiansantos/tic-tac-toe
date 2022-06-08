@@ -23,33 +23,30 @@ export class CreateRoomsService {
         } else {
           roomsCreate[room] = { iconO: true, oWiner: 0, xWiner: 0, ties: 0 }
         }
-
-      } else {
-        if (room) {
-          const { iconO, iconX } = roomsCreate[room];
-          if (iconX) {
-            io.emit(room, 'layerIsOn')
-            return {
-              message: 'connectRoom',
-              success: true,
-              icon: 'o'
-            }
-          }
-          if (iconO) {
-            io.emit(room, 'layerIsOn')
-            return {
-              message: 'connectRoom',
-              success: true,
-              icon: 'x'
-            }
-          }
+        return {
+          message: 'Room create',
+          success: true,
+          icon: icon
         }
       }
+      if (room) {
+        const { iconX } = roomsCreate[room];
+        
+        io.emit(room, 'layerIsOn');
 
-      return {
-        message: 'Room create',
-        success: true,
-        icon: icon
+        if (iconX) {
+          return {
+            message: 'connectRoom',
+            success: true,
+            icon: 'o'
+          }
+        }
+
+        return {
+          message: 'connectRoom',
+          success: true,
+          icon: 'x'
+        }
       }
     } catch (error) {
       console.log(error);

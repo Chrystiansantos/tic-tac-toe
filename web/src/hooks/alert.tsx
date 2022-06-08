@@ -10,7 +10,7 @@ export function alert({ message, type }: IAlert) {
     case 'success':
       return toast.success(message, {
         position: 'top-right',
-        autoClose: 5000,
+        autoClose: 500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -21,7 +21,7 @@ export function alert({ message, type }: IAlert) {
     case 'error':
       return toast.error(message, {
         position: 'top-right',
-        autoClose: 5000,
+        autoClose: 500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -32,7 +32,7 @@ export function alert({ message, type }: IAlert) {
     case 'warning':
       return toast.warning(message, {
         position: 'top-right',
-        autoClose: 5000,
+        autoClose: 500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -43,7 +43,7 @@ export function alert({ message, type }: IAlert) {
     default:
       return toast(message, {
         position: 'top-right',
-        autoClose: 5000,
+        autoClose: 500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
