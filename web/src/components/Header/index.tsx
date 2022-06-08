@@ -13,12 +13,8 @@ export function Header({ setOpenModalRestar, iconSelect, room }: IHeaderProps) {
   return (
     <div className={styles.container}>
       <div>
-        {iconSelect === 'x' && (
-          <FiX size="32px" fontWeight="900" color="#35C2BE" />
-        )}
-        {iconSelect === 'o' && (
-          <FiCircle size="32px" fontWeight="900" color="#F2B237" />
-        )}
+        <FiX size="32px" fontWeight="900" color="#35C2BE" />
+        <FiCircle size="32px" fontWeight="900" color="#F2B237" />
       </div>
       <div className={styles.buttonTurn}>
         <button type="button">
