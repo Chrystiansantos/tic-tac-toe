@@ -33,4 +33,4 @@ A seguir instalar as dependencias e executar os projetos:
 A seguir acessar o app local por este link <a href="http://localhost:3000" >Tic Tac Toe Local</a> ou através deste em producão <a href="https://tic-tac-toe-lime-chi.vercel.app/">Tic Tac Toe Prod</a>
 
 ## Demo
-https://user-images.githubusercontent.com/33062949/172507988-0d0bfb19-e667-4445-9f32-8ac0b81697f5.mp4
+https://user-images.githubusercontent.com/33062949/172510405-211a062b-0081-4b5b-92d8-5d66edcc2046.mp4
